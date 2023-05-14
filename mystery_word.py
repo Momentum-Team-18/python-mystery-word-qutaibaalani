@@ -14,18 +14,32 @@ def open_file(file):
 
 
 # This function is to chose the random word
-def random_word(list):
+def random_word(lst):
     # To select the random word from the blank list
-    word = random.choice(list)
+    word = random.choice(lst)
     # To catch the random word
     return word
 
 
-print(word)
-
-
 def play_game():
-    pass
+    # Select a random word from the file "words.txt"
+    chosen_word = random_word(open_file("words.txt"))
+    # Determine the length of the chosen word
+    word_length = len(chosen_word)
+    # Create a list of underscores representing each letter in the word
+    underscore = ["_ "] * word_length
+
+    # Print the chosen word (for debugging purposes)
+    print(chosen_word)
+    # Print the number of letters in the chosen word
+    print(f"Your word has {word_length} letters.")
+    # Print the underscores representing the unguessed letters of the word
+    print("".join(underscore))
+
+    # Initialize an empty list to store the guesses made by the player
+    guesses = []
+    # Initialize the guess count to 0
+    guess_count = 0
 
 
 if __name__ == "__main__":
